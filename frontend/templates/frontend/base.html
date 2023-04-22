@@ -1,0 +1,71 @@
+
+{% load static%} <!-- To enable you load and use the css file-->
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap link-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        
+        <!-- Local Css file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'blogapp/stylesheet.css'%}" > <!-- This generates a url for the css static files -->
+
+        {% if title %} <!-- if a title was specified for this page then let he title be -->
+            <title>ABY-- {{title}}</title>
+        {% else %} <!-- if there's no title print out-->
+            <title>A BETTER YOU{{title}}</title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- navigation bar -->
+        <header <!-- The purpose of this base.html file is to provide a base html template to avoid 
+editing basic stuffs repeatedly in the various html files -->
+
+{% load static%} <!-- To enable you load and use the css file-->
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap link-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        
+        <!-- Local Css file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'blogapp/style.css'%}" > <!-- This generates a url for the css static files -->
+
+        {% if title %} <!-- if a title was specified for this page then let he title be -->
+            <title>Django tutorial- {{title}}</title>
+        {% else %} <!-- if there's no title print out-->
+            <title>Django tutorial{{title}}</title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- navigation bar -->
+        <header>
+            <!-- defines the nav bar colour and bg-->
+            <nav>
+                <ul>
+                    <li{% if request.path == '/' %} class="active"{% endif %}><a href="/">Home</a></li>
+                    <li{% if request.path == '/about/' %} class="active"{% endif %}><a href="/about/">Newsleters</a></li>
+                    <li{% if request.path == '/daily/' %} class="active"{% endif %}><a href="/daily/">Dailys</a></li>
+                    <li{% if request.path == '/signup/' %} class="active"{% endif %}><a href="/SignUp/">SignUp</a></li>
+                    <li{% if request.path == '/login/' %} class="active"{% endif %}><a href="/login/">Login</a></li>
+
+                </ul>
+            
+            </nav>
+              
+        </header>
+        {% include 'blogapp/footer.html' %}
+        {% load crispy_forms_tags %}
+        <!-- Bootstrap javascript for reactivity-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    </body>
+</html>
