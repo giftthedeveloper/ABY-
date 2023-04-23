@@ -6,3 +6,6 @@ from django.views.generic import TemplateView
 
 class LoginView(TemplateView):
     template_name = 'frontend/login.html'
+
+class SignUpView(TemplateView):
+    template_name = 'frontend/signup.html'
