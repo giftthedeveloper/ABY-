@@ -11,39 +11,42 @@
     <title>Login |A BETTER YOU</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container main">
-            <div class="row">
-                <div class="col-md-6 side-image">
-                    <!-------Image-------->
-                    <!--<img src="https://images.unsplash.com/photo-1579600161224-cac5a2971069?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdlbGNvbWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Welcome to ABY"> -->
-                    
-                </div>
-                <div class="col-md-6 right">
-                    <div class="text">
-                        <h4>We're honoured to have you as an Admin</h4>
+    <form method="post">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div class="container main">
+                <div class="row">
+                    <div class="col-md-6 side-image">
+                        <!-------Image-------->
+                        <!--<img src="https://images.unsplash.com/photo-1579600161224-cac5a2971069?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdlbGNvbWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Welcome to ABY"> -->
+                        
                     </div>
-                    <div class="input-box">
-                        <header>Login As Admin</header>
-                        <div class="input-field">
-                            <input type="text" class="input" id="email" required autocomplete="off">
-                            <label for="email">Email</label>
+                    <div class="col-md-6 right">
+                        <div class="text">
+                            <h4>We're honoured to have you as an Admin</h4>
                         </div>
-                        <div class="input-field">
-                            <input type="password" class="input" id="password" required>
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="submit" class="submit" value="Sign Up">
-                            
-                        </div>
-                        <div class="signin">
-                            <span>forgot password ? <a href="{% url 'signup' %}">Reset here</a></span>
+                        <div class="input-box">
+                            <header>Login As Admin</header>
+                            <div class="input-field">
+                                <input type="text" class="input" id="email" required autocomplete="off">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input" id="password" required>
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" class="submit" value="Sign In">
+                                
+                            </div>
+                            <div class="signin">
+                                <span>forgot password ? <a href="{% url 'signup' %}">Reset here</a></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </body>
 </html>
