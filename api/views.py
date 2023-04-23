@@ -10,6 +10,8 @@ from django.contrib import messages
 from django.conf import settings
 from django.urls import reverse
 from django.views.generic import TemplateView
+from django.contrib.auth import authenticate, login
+
 
 
 class SignUpView(TemplateView):
@@ -60,3 +62,31 @@ class SignUpView(TemplateView):
         email.send()
         messages.success(request, 'Please check your email to activate your account.')
         return redirect('login')  
+    
+
+class LoginView(TemplateView):
+    template_name = 'frontend/login.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        # Get the login details
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+
+
+        #check if user is authenticated
+        user = authenticate(request, email=email, password=password)
+
+        if user is not None:
+            # Log in the user
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid email or password.')
+            return render(request, self.template_name)
+
+
+class HomeView(TemplateView):
+    template_name = 'frontend/home.html'

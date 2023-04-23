@@ -1,0 +1,10 @@
+Hello {{ user.name }},
+
+Thank you for joining A Better You Workforce. Please click on the link below to activate your account:
+
+{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+If you did not opt to be part of our website admins, please ignore this email.
+
+Best,
+ABY Team
